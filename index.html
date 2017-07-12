@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>上海乃村装饰工艺有限公司</title>
+                <link type="text/css" rel="stylesheet" href="css/header.css"/>
+                <link type="text/css" rel="stylesheet" href="css/index.css"/>
+                <link type="text/css" rel="stylesheet" href="css/footer.css"/>
+                <link type="text/css" rel="stylesheet" href="css/nivoSlider/nivo-slider.css" />
+                <link type="text/css" rel="stylesheet" href="build/mediaelementplayer.min.css"/>
+                <script type="text/javascript" src="js/jquery.min.1.4.2.min.js"></script>
+                <script type="text/javascript" src="js/nivoSlider/jquery.nivo.slider.pack.js"></script>
+                <script type="text/javascript" src="js/main.js"></script>
+                <script type="text/javascript" src="build/mediaelement-and-player.min.js"></script>
+                <script language="javascript">
+                        $(document).ready(function() {
+                                $('video').mediaelementplayer({
+                                        features: ['playpause', 'progress', 'volume', 'postroll', 'fullscreen'],
+                                        AndroidUseNativeControls: false
+                                });
+                                startclock();
+                                var date = new Date(); //日期对象
+                                var nowY = date.getFullYear(); //读英文就行了
+                                var nowM = date.getMonth() + 1; //取月的时候取的是当前月-1如果想取当前月+1就可以了
+                                var nowD = date.getDate(); //读英文就行了
+
+                                var day1 = (new Date).setFullYear(2000, 1, 1);
+                                var day2 = (new Date).setFullYear(nowY, nowM, nowD);
+                                var number_of_days = (day2 - day1) / 86400000;
+                                $("#nowDay").html(number_of_days.toFixed(0)); //div的html是now这个字符串
+
+
+                                //var date = new Date(); //日期对象
+                                //var now = "";
+                                //now = date.getFullYear()+"年"; //读英文就行了
+                                //now = now + (date.getMonth()+1)+"月"; //取月的时候取的是当前月-1如果想取当前月+1就可以了
+                                //now = now + date.getDate()+"日";
+                                //                now = now + date.getHours()+"时";
+                                //                now = now + date.getMinutes()+"分";
+                                //                now = now + date.getSeconds()+"秒";
+                                //$("#nowDay").html(now); //div的html是now这个字符串
+                                //                setTimeout("show()",1000); //设置过1000毫秒就是1秒，调用show方法
+                        })
+
+                        var timerID = null;
+                        var timerRunning = false;
+                        function stopclock() {
+                                if (timerRunning)
+                                        clearTimeout(timerID);
+                                timerRunning = false;
+                        }
+                        function startclock() {
+                                stopclock();
+                                showtime();
+                        }
+
+                        function showtime() {
+                                var now = new Date();
+                                var hours = now.getHours();
+                                var minutes = now.getMinutes();
+                                var seconds = now.getSeconds()
+                                //var timeValue = "" +((hours >= 12) ? "下午 " : "上午 " )
+                                //timeValue += ((hours >12) ? hours -12 :hours)
+                                timeValue = hours;
+                                timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+                                timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
+                                //                document.clock.thetime.value = timeValue;
+                                $("#nowDate").html(timeValue);
+                                timerID = setTimeout("showtime()", 1000);
+                                timerRunning = true;
+                        }
+                </script>
+        </head>
+
+        <body>
+                <div id="header">
+                        <div class="logo">
+                                <a href="index.html">Nomura</a>
+                        </div>
+                        <div class="lang">
+                                <ul>
+                                        <!--<!--<li><a href="#">日本语</a></li>
+                                        <li class="mid tapon"><a href="#">ENGLISH</a></li>--><!--<li><a href="#">日本语</a></li>
+                                        <li class="mid tapon"><a href="#">ENGLISH</a></li>-->
+                                        <!--<li><a href="#">简体中文</a></li>-->
+                                        <li><a href="en/index.html">ENGLISH</a></li>
+                                </ul>
+                        </div>
+                </div>
+                <!-- <div id="navigation">
+                        <ul>
+                                <li class=''><a href="company/summary.html">公司简介</a>
+                                        <ul>
+                                                <li><a href="company/information.html">简介</a></li>
+                                                <li><a href="company/visionvalues.html">战略 & 价值</a></li>
+                                                <li><a href="company/safe.html">安全 & 可持续发展</a></li>
+                                                <li><a href="company/news.html">新闻</a></li>
+                                                <li><a href="company/contactus.html">联系我们</a></li>
+                                        </ul>
+                                </li>
+                                <li class=''><a href="area/area.html">领域</a>
+                                        <ul>
+                                                <li><a href="area/exhibition.html">博物馆/科技馆/展览设施</a></li>
+                                                <li><a href="area/exhibition1.html">主题乐园</a></li>
+                                                <li><a href="area/exhibition2.html">宾馆/酒店</a></li>
+                                                <li><a href="area/exhibition3.html">商业设施</a></li>
+                                                <li><a href="area/exhibition4.html">办公环境</a></li>
+                                                <li><a href="area/exhibition5.html">住宅</a></li>
+                                        </ul>
+                                </li>
+                                <li class=''><a href="projects/projects.html">项目案例</a>
+                                        <ul>
+                                                <li><a href="projects/important.html">经典案例</a></li>
+                                                <li><a href="projects/progress.html">在建项目</a></li>
+                                                <li><a href="projects/complete.html">近年完成项目</a></li>
+                                        </ul>
+                                </li>
+                                <li class=''><a href="service/service.html">服务范围</a></li>
+                                <li class=''><a href="partners/partners.html">合作伙伴</a>
+                                        <ul>
+                                                <li><a href="partners/our_partners.html">我们的合作团队</a></li>
+                                                <li><a href="partners/our_customers.html">我们的客户</a></li>
+                                        </ul>
+                                </li>
+                                <!--<li class=''><a href="#">联系我们</a>
+                                    <ul>
+                                        <li><a href="#">公司具体位置</a></li>
+                                    </ul>
+                                </li>-->
+                                <li class="li_end"><a href="joinus/joinus.html">加入我们</a>
+                                        <ul>
+                                                <li><a href="joinus/employment.html">诚聘英才</a></li>
+                                                <!--<!--<li><a href="#">实习生</a></li>-->
+                                                <li><a href="joinus/whyus.html">为什么选择我们</a></li>
+                                        </ul>
+                                </li>
+                        </ul>
+                </div> -->
+                <div class="f01bg"></div>
+                <div id="midwrapper">
+                        <div id="slider" class="nivoSlider">
+                                <a href="projects/imp16.html"><img src="img/nivoSlider/01.jpg" alt="" /></a>
+
+<a href="projects/imp16.html"><img src="img/nivoSlider/03.jpg" alt="" /></a>
+
+<a href="projects/imp16.html"><img src="img/nivoSlider/05.jpg" alt="" /></a>
+<a href="projects/imp16.html"><img src="img/nivoSlider/444.jpg" alt="" /></a>
+<a href="projects/imp16.html"><img src="img/nivoSlider/555.jpg" alt="" /></a>
+
+                                <a href="projects/imp17.html"><img src="img/nivoSlider/06.jpg" alt="" /></a>
+                                <a href="projects/imp15.html"><img src="img/nivoSlider/07.jpg" alt="太平洋联合馆" /></a>
+                                <a href="projects/imp5.html"><img src="img/nivoSlider/08.jpg" alt="" /></a>
+                                <a href="projects/imp10.html"><img src="img/nivoSlider/09.jpg" alt="" /></a>
+                                <a href="projects/imp18.html"><img src="img/nivoSlider/10.jpg" alt="" /></a>
+                                <a href="projects/imp16.html"><img src="img/nivoSlider/11.jpg" alt="" /></a>
+  <a href="projects/imp16.html"><img src="img/nivoSlider/12.jpg" alt="" /></a>
+    <a href="projects/imp16.html"><img src="img/nivoSlider/13.jpg" alt="" /></a>
+      <a href="projects/imp16.html"><img src="img/nivoSlider/14.jpg" alt="" /></a>
+        <a href="projects/imp16.html"><img src="img/nivoSlider/15.jpg" alt="" /></a>
+          <a href="projects/imp16.html"><img src="img/nivoSlider/16.jpg" alt="" /></a>
+            <a href="projects/imp16.html"><img src="img/nivoSlider/17.jpg" alt="" /></a>
+              <a href="projects/imp16.html"><img src="img/nivoSlider/18.jpg" alt="" /></a>
+
+
+
+
+
+
+
+                        </div>
+
+                </div>
+                <div id="content">
+                        <div class="con">
+                                <div class="content_l">
+                                        <a href="company/safe.html"><h2>安全与可持续性</h2></a>
+                                        <div class="left">
+                                                <p>
+                                                        安全与可持续性是我们企业文化的基础价值观，乃村实现了行业内项目零事故的记录。多年来，零事故的理念让我们在安全方面的实践经验处于行业领先地位。
+                                                </p>
+                                                <h3>我们的目标：零事故</h3>
+                                                <a href="company/safe.html"><img class="content_img" src="img/mid_left.jpg"></img></a>
+                                                <p style="text-align: center;color: #1E7DBA;font-size: 18px; font-weight: bolder;font-family: '微软雅黑','宋体',Serif;  ">安全生产&nbsp;<span id="nowDay"></span>&nbsp;天&nbsp;&nbsp;<span id="nowDate"></span></p><br/>
+                                                <p>
+                                                        我们致力于用安全作业来保证员工的安全，这同时也是对客户的回馈，他们的运营成本下降了和生产力得到提高，因为不必花费时间在处理事故上。同时我们的员工可以在每天结束工作后安全地回家和家人团聚。
+                                                </p>
+                                                <br></br>
+                                                <!--<a href="#"><img src="img/aboutus.jpg"></img></a>-->
+                                        </div>
+                                </div>
+                                <div class="content_m">
+                                        <a href="company/information.html"><h2>公司简介</h2></a>
+                                        <div class="mid">
+                                                <p>
+                                                       【中国、上海、总部】<br/>
+上海乃村装饰工艺有限公司<br/>
+地址：上海徐汇区蒲汇塘路158号中南商务楼2楼<br/>
+电    话：+86-21-64283243<br/>
+传    真：+86-21-64860873<br/>
+                                                </p><br/>
+
+                                              <p>
+                                                       【日本、大阪、分部】<br/>
+株式会社 梦想工匠<br/>
+株式会社 ドリームマスター<br/>
+地    址：〒559-0034大阪市住之江区南港北2-1-10 <br/>ATC ビルITM 棟4 階N-2 BSO<br/>
+电    话：+81-6-6615-5452<br/>
+传    真：+81-6-6615-5454<br/>
+                                                </p>
+                                                <h3>上海乃村装饰工艺有限公司</h3>
+                                                <div style="padding: 6px 0;">&nbsp;</div>
+                                                <!--<a href="company/content.html"><img class="content_img" src="img/company_sum.png" /></a>-->
+                                                <video width="293" height="195" id="player2" poster="img/videoimg/company_sum.png" type="video/mp4" src="video/naicun.mp4" controls preload="none">
+                                                </video>
+                                                <br/><p>
+                                                       乃村装饰是一家具有世界水准的本地建筑施工服务供应商，我们的服务涵括整个建筑装饰发展的流程， 在中国我们在建筑装饰业处于领先地位。
+                                                </p>
+                                                <br/>
+
+                                                <!--<a href="#"><img src="img/seethemall.jpg" /></a>-->
+                                        </div><br/>
+                                </div>
+                                <div class="content_r">
+                                        <a href="company/news.html"><h2>我们的团队</h2></a>
+                                        <div class="rig">
+                                                <video width="285" height="195" id="player2" poster="img/videoimg/img_we.jpg" type="video/mp4" src="video/1018gai.mp4" controls preload="none">
+                                                </video>
+                                                <br/>
+                                                <a href="company/news.html"><h2>新闻资讯</h2></a>
+                                                <br/>
+                                                <marquee behavior=scroll direction=up scrollamount=2 onMouseOut="this.start()" onMouseOver="this.stop()" height="210px">
+
+
+
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2017年5月30日&nbsp;&nbsp; 亚特兰蒂斯水族馆，缸体内造景工程圆满竣工，注水顺利完成。 </strong></p></a><br />
+<a href="company/news.html"><p class="rig_p_title"><strong>2017年4月30日&nbsp;&nbsp;  上海乃村装饰工艺有限公司成功完成日本著名家具品牌NITORI的武汉凯德店、武汉世纪都会店、唐山店、杭州店施工，并成功中标NITORI徐家汇旗舰店施工项目。</strong></p></a><br />
+<a href="company/news.html"><p class="rig_p_title"><strong>2017年4月24日&nbsp;&nbsp; 上海乃村装饰工艺有限公司在日本大阪注册成立株式会社梦想工匠 /株式会社ドリームマスター  </strong></p></a><br />
+<a href="company/news.html"><p class="rig_p_title"><strong>2017年2月4日&nbsp;&nbsp; 上海乃村装饰工艺有限公司成功续签上海迪士尼乐园年度主题维保合同。</strong></p></a><br />
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年12月19日&nbsp;&nbsp; 上海乃村装饰工艺有限公司成功中标海花岛1号岛F区海洋世界室外包装扩初设计项目。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年12月7日&nbsp;&nbsp; 上海乃村装饰工艺有限公司成功中标恒大海花岛1#岛D区环球市集、童话故事广场主题包装工程。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年10月30日&nbsp;&nbsp; 上海乃村装饰工艺有限公司顺利完成BOSE北区59家店改造工程。</strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年10月26日&nbsp;&nbsp; 上海乃村装饰工艺有限公司成功中标恒大海花岛1号岛F区水上乐园雪山和小山包装扩初阶段设计及模型制作项目。</strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年10月18日&nbsp;&nbsp; 上海乃村装饰工艺有限公司成功中标成都航空科技文化博览中心矿山车区标段主题包装深化设计项目。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年6月30日&nbsp;&nbsp; 上海乃村装饰工艺有限公司中标三亚海棠湾亚特兰蒂斯酒店项目一期水下部分主题包装工程。</strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年6月13日 &nbsp;&nbsp;上海乃村装饰工艺有限公司参加2016亚洲景点展并取得良好效果。 </strong></p></a><br />
+
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年4月20日&nbsp;&nbsp; 上海乃村装饰工艺有限公司成功与上海海昌极地海洋世界有限公司签订《上海海昌极地海洋公园项目室外主题包装方案至施工图设计合同》 。</strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2015年12月30日 &nbsp;&nbsp;上海乃村装饰工艺有限公司成功中标无锡万达城室外主题乐园紫砂壶奇妙旅行阿福阿喜传说包装工程标段二项目。 </strong></p></a><br />
+
+
+
+
+
+
+
+
+
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年6月16日&nbsp;&nbsp; 上海迪士尼乐园顺利竣工、盛大开园   我司进入运营维保工作。 </strong></p></a><br />
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年6月13日&nbsp;&nbsp; 受邀参展 2016年度亚洲景点博览会  再现“鲁滨逊漂流记”主题场景。地址：上海新国际博览中心(SNIEC)  展位号：N2  2570   布展日程：6月14日 至 6月16日 </strong></p></a><br />
+<a href="company/news.html"><p class="rig_p_title"><strong>2016年4月20日&nbsp;&nbsp; 成功中标上海海昌极地海洋公园第三标段设计
+	       （包括整个园区内最高建筑【冰山】、最大餐厅【沙滩餐厅】、及儿童游乐区等范围）。 </strong></p></a><br />
+<a href="company/news.html"><p class="rig_p_title"><strong>2015年12月30日&nbsp;&nbsp; 成功中标无锡万达主题乐园【紫砂壶传奇】标段深化设计与施工。 </strong></p></a><br />
+<a href="company/news.html"><p class="rig_p_title"><strong>2015年11月1日&nbsp;&nbsp; 上海乃村与迪士尼官方（上海国际主题乐园有限公司）签订主题包装与室内装饰直接供应商合约
+	        整个上海迪士尼此科目直接供应商只有我司一家。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2015年9月26日&nbsp;&nbsp; 上海乃村装饰工艺有限公司承建的无锡积水太仓样板房工程竣工。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2015年9月17日&nbsp;&nbsp; 长兴饰梦乐海洋城店和饰梦乐张家港吾悦广场店装饰工程通过竣工验收。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2015年9月8日&nbsp;&nbsp; 上市公司奥康鞋业总部大厦装修工程全面竣工（工作内容：方案设计、深化设计、装修工程）。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2015年6月21日&nbsp;&nbsp; 上海乃村装饰工艺有限公司正式成为万达地产集团的合格供应商成员。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2015年6月12日&nbsp;&nbsp; 浙江温州现代大厦装修工程中标，并于6月15日正式开工建设。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2015年5月19日 &nbsp;&nbsp;上海乃村装饰工艺有限公司在中国房地产业协会“第三届主题公园与景区国际峰会”上荣获“中国年度最佳主题演绎装饰承建商”。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2014年10月20日 &nbsp;&nbsp;上海乃村装饰工艺有限公司承建的无锡积水苏州会所软装工程竣工。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2014年9月4日 &nbsp;&nbsp;上海乃村装饰工艺有限公司中标的辽宁省科技馆创造与实践馆正式竣工开馆迎客。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2014年8月19日 &nbsp;&nbsp;招商地产徐泾150套别墅精装修工程通过竣工验收。  </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2014年7月17日 &nbsp;&nbsp;苏州饰梦乐凤凰广场店和饰梦乐吴中永旺店装饰工程通过竣工验收。  </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2014年4月26日 &nbsp;&nbsp;东海广场五星甲级写字楼35F装饰工程通过竣工验收。  </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2014年3月15日 &nbsp;&nbsp;上海乃村装饰工艺有限公司承接的米其林星级餐厅HAKKASAN内装修工程通过了业主验收，并交付业主。米其林星级餐厅Hakkasan-客家人，位于外滩18号5F，曾经入榜世界前五十名餐厅，排名第19位。  </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2014年3月7日 &nbsp;&nbsp;上海乃村装饰工艺有限公司中标的迪士尼主题乐园宝藏湾园区正式开工建设。  </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2014年2月19日 &nbsp;&nbsp;上海乃村装饰工艺有限公司承建的无锡积水苏州别墅、售楼处改造工程竣工。  </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2013年8月11日 &nbsp;&nbsp;饰梦乐月星环球港店装饰工程通过竣工验收  </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2013年7月23日 &nbsp;&nbsp;招商地产徐泾售楼处精装修工程通过竣工验收。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2013年7月18日 &nbsp;&nbsp;招商地产徐泾售楼处精装修工程通过竣工验收。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2013年7月23日 &nbsp;&nbsp;万科地产源墅42号样板房精装修工程通过竣工验收。 </strong></p></a><br />
+
+<a href="company/news.html"><p class="rig_p_title"><strong>2013年5月28日 &nbsp;&nbsp;宝力企业集团办公室精装修工程通过竣工验收。</strong></p></a><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>乃村公司组织进行2014年中期总结与展望</strong></p></a>
+                                                        <p>
+                                                                2014年10月19日，上海乃村公司在奉贤金海岸度假村组织进行了《2014年乃村公司中期总结与展望》，公司170人参加了会议。
+
+                                                                乃村公司各项目负责人分别总结介绍了上海迪士尼主题乐园宝藏湾主题装饰工程、辽宁科技馆创造实践展厅布展项目、上海东海广场五星甲级写字楼35F装饰工程、苏州饰梦乐凤凰广场店和饰梦乐吴中永旺店装饰工程、镇江北固湾一期公共区域装修项目、招商地产虹桥华府精装修工程、第一分公司住宅商业及办公室工程项目的进展情况，并介绍了公司新建项目的设计思路。公司领导在会上再次强调了“以人为本，安全第一”的管理理念，要求全体员工时刻牢记安全第一，所有现场施工要严格要求，坚决做到安全施工、文明施工，项目管理人员和施工人员要真正认识到安全是企业和个人铸就乃村精品项目的前提和保障。会议结束前，项目安全管理部门向全体员工发放了《乃村公司迪士尼项目安全卡片》，进行安全生产宣教。
+                                                        </p>
+                                                        <br />
+
+
+
+
+
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>乃村公司开展《激情成就梦想 团队铸就辉煌》拓展培训活动</strong></p></a>
+                                                        <p>为进一步增强团队合作精神，形成公司团结协作的团队氛围，提升团队凝聚力，2014年10月18日-19日，上海乃村公司在金秋十月的奉贤金海岸度假村组织开展《激情成就梦想 团队铸就辉煌》专业拓展活动，公司近170人在专业拓展公司培训师的带领下参加了活动。<br />12个乃村团队激情四溢，以高昂的团队士气全情投入拓展培训课程，团结一致共同完成了《高空攀岩》、《穿越电网》、《CS镭射对战》以及《毕业墙》的合作项目。大家在活动中挑战自我，领悟、激发潜能，提升团队应对挑战和相互合作的意识和能力；体会到有效的组织协调是团队成功的关键；相互协调和精心操作，才能保障项目的顺利实施；摆正个人在团队中的角色定位，是团队成功的基础。《穿越电网》项目更是让大家切身体验整体协作与个体配合的重要，感受凝聚团队的力量才能顺利完成任务。所有成员还在规定时间内，齐心协力从地面徒手攀上了离地高达4米的墙顶，完成了拓展压轴项目《毕业墙》，锻炼了团队共同战斗能力，提高了安全意识和团队合作精神。培训过程惊险刺激，大家在享受拓展乐趣的同时，也感受了乃村温馨融洽的大家庭氛围，增进了员工与团队的认同感和归属感 。<br />
+                                                                星光之下大家热情参与了篝火晚会，员工们结合工作场景，以艺术创作的工具为道具，演绎了自编自演的歌舞、《乃村新闻》、集体舞等节目,增进了员工间的感情。19日下午，公司还组织员工游览了奉贤海湾国家森林公园，在碧波荡漾的白鸟湖船游上和绿草蓝天中放松身心。
+                                                        </p>
+                                                        <br />
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>乃村公司员工获迪士尼项目管理方颁发的安全模范奖</strong></p></a>
+                                                        <p>
+                                                                2014年9月，在上海国际主题乐园有限公司、上海国际主题乐园配套设施有限公司、上海国际主题乐园和度假区管理有限公司组织召开的中秋联欢晚会暨安全总结大会上，上海乃村公司员工卢仁宾获得安全模范奖，荣获了安全模范证书。
+
+                                                        </p>
+                                                        <br />
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>乃村公司举行迪士尼项目现场启动会</strong></p></a>
+                                                        <p>
+                                                                2014年6月23日，上海乃村公司举行“迪士尼项目现场启动会”。 公司迪士尼项目全体管理人员、公司新员工和参加雕塑、绘画技能培训的实习生参加了项目启动会。会上，公司领导及项目经理分别介绍了乃村公司承接的迪士尼宝藏湾项目的前景、所承担的任务与项目团队组成人员，项目安全管理员进行了安全生产专题培训，管理部门负责人介绍了公司管理制度。目前，项目的相关工作正在积极有序推进中。</p>
+                                                        <br />
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>乃村公司党支部进行迪士尼项目现场启动专题动员</strong></p></a>
+                                                        <p>
+                                                                2014年6月23日，上海乃村公司党支部组织进行了迪士尼项目现场启动专题动员，党支部书记在动员会上要求全体党员在项目运行过程中，充分发挥党员模范带头作用，“一个党员一面旗、保质保量当先锋”，并对全体党员提出了四点要求：一是认清形势，加强学习，增强责任感，发挥党员的先锋模范作用，当好项目派头兵；二是协助安全员提高全员安全意识，防止设备、人身事故的发生，当好安全生产的兼职监督员；三是要提升党员个人素质，通过学习培训，提高自身参与项目的技能水平，当好战斗员；四是全体党员在项目运行过程中要廉洁自律，关心员工的学习和生活，及时反馈项目运行中存在的意见和问题，建言献策，当好项目的沟通联络员。乃村党支部号召全体党员团结一致，相互协作，各负其责，守望相助，为确保迪士尼宝藏湾项目的成功作出应有的贡献！
+                                                        </p>
+                                                        <br />
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>——苏州饰梦乐凤凰广场店和饰梦乐吴中永旺店装饰工程通过竣工验收</strong></p></a>
+                                                        <p>乃村公司承接的苏州饰梦乐凤凰广场店和饰梦乐吴中永旺店装饰工程分别于2014年6月30日、2014年7月30日顺利通过竣工验收，并得到了业主方的一致好评和认可。业主方于2014年9月26日正式开业。
+                                                        </p>
+                                                        <br />
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>——东海广场五星甲级写字楼35F装饰工程竣工验收</strong></p></a>
+                                                        <p>2014年4月20日，乃村公司承接的上海东海广场五星甲级写字楼35F装饰工程顺利通过竣工验收，得到了业主和监理方的一致好评和认可。同时SOHO东海广场物业管理部对乃村公司的文明施工和安全施工的管理非常满意和认可。业主方于2014年6月正式入驻办公。
+                                                        </p>
+                                                        <br />
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>——哈克桑餐饮内装修工程通过业主验收</strong></p></a>
+                                                        <p>2014年3月28日，乃村公司承接的米其林星级餐厅HAKKASAN内装修工程通过了业主验收，并交付业主。米其林星级餐厅Hakkasan-客家人，位于外滩18号5F，曾经入榜世界前五十名餐厅，排名第19位。
+                                                        </p>
+                                                        <br />
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>——积极履行社会责任为多名大学生提供企业实习、培训、就业岗位</strong></p></a>
+                                                        <p>
+                                                                2014年2月至今，上海乃村公司在迪士尼项目推进工程中，积极履行社会责任，努力以全新的视角审视职业教育的社会价值，以全新的举措提升职业教育的服务能力，以全新的思路谋求企业参与职业教育的内涵发展，推动校企合作培训；先后为多名大学生提供了企业实习、培训、就业岗位，使接受职业教育的学生努力适应迪斯尼工程要求，提升国内主题装饰水平。
+                                                        </p>
+                                                        <br/>
+                                                        <!--<h2>BUSINESS REPORT</h2>
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>饰梦乐长风景畔广场店</strong></p></a>
+                                                        <p>
+                                                            长风景畔广场2楼饰梦乐店
+                                                            饰梦乐是一家时尚的服装品牌销售店，地址位于普陀区大渡河路168弄56号，面积1130平方米。
+                                                            已于2012.4.13竣工。
+                                                        </p>
+                                                        <br />
+                                                        <a href="company/news.html"><p class="rig_p_title"><strong>2011上海会展论坛</strong></p></a>
+                                                        <p>
+                                                            在上海浦东世博展览馆举办上海会展论坛。本届论坛以“建设创意城市，推进会展创新”为主题。邀请了被誉为国际创意之父的约翰•霍金斯先生和中国创意之父厉无畏先生同台演讲，相映成辉，共同构筑会展创新创意愿景。我司总经理陆景阳先生率队参与本届论坛各项活动。
+                                                        </p>
+                                                        -->    </marquee>
+                                        </div>
+                                </div>
+                                <div style="clear: both;"></div>
+                                <!--<br/>
+                                <div class="content_b">
+                                    <img src="img/mail.jpg" />
+                                    <p>&nbsp;Subscrib to our news letters info@nomura-sh.cn</p>
+                                </div>-->
+                        </div>
+                </div>
+                <div id="footer_index">
+                        <div class="just_footer">
+
+                                <div class="foot_img">
+                                        <a target="_blank" href="http://e.weibo.com/u/3148748320?ref=http%3A%2F%2Fweibo.com%2F2410654832%2Fmyfollow%3Ft%3D1%26page%3D2" class="sina_img"></a>
+                                        <a class="iaf_img"></a>
+                                        <a class="qac_img"></a>
+                                        <span class="iso">
+                                                ISO 9001 &nbsp;
+                                        </span>
+                                        <span class="threea">
+                                                AAA级企业认证
+                                        </span>
+                                </div>
+
+                                <div class="foot_text">
+                                        <span class="sp_comp">&nbsp;&nbsp;&nbsp;上海乃村装饰工艺有限公司网版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin-left:34px;">沪ICP备09050805号</span><br />&nbsp;&nbsp;&nbsp;Copyright NOMURA shanghai LTD., all right reserved &nbsp;&nbsp;</span>
+                                </div>
+
+                        </div>
+
+                </div>
+        </body>
+</html>

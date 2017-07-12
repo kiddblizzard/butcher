@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>上海乃村装饰工艺有限公司</title>
+        <link type="text/css" rel="stylesheet" href="css/header.css"/>
+        <link type="text/css" rel="stylesheet" href="css/index.css"/> 
+        <link type="text/css" rel="stylesheet" href="css/footer.css"/>
+        <link type="text/css" rel="stylesheet" href="css/nivoSlider/nivo-slider.css" />
+        <link type="text/css" rel="stylesheet" href="build/mediaelementplayer.min.css"/>
+        <script type="text/javascript" src="js/jquery.min.1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/nivoSlider/jquery.nivo.slider.pack.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="build/mediaelement-and-player.min.js"></script>
+        <script language="javascript">
+            $(document).ready(function(){
+				$('video').mediaelementplayer({
+					features: ['playpause','progress','volume','postroll','fullscreen'],
+					AndroidUseNativeControls: false
+				});
+                startclock();
+                var date = new Date(); //日期对象
+                var nowY = date.getFullYear(); //读英文就行了
+                var nowM = date.getMonth()+1; //取月的时候取的是当前月-1如果想取当前月+1就可以了
+                var nowD = date.getDate(); //读英文就行了
+
+                var day1 = (new Date).setFullYear(2000, 1, 1);
+                var day2 = (new Date).setFullYear(nowY, nowM, nowD);
+                var number_of_days = (day2 - day1) / 86400000;
+                $("#nowDay").html(number_of_days.toFixed(0)); //div的html是now这个字符串
+
+                
+                //var date = new Date(); //日期对象
+                //var now = "";
+                //now = date.getFullYear()+"年"; //读英文就行了
+                //now = now + (date.getMonth()+1)+"月"; //取月的时候取的是当前月-1如果想取当前月+1就可以了
+                //now = now + date.getDate()+"日";
+                //                now = now + date.getHours()+"时";
+                //                now = now + date.getMinutes()+"分";
+                //                now = now + date.getSeconds()+"秒";
+                //$("#nowDay").html(now); //div的html是now这个字符串
+                //                setTimeout("show()",1000); //设置过1000毫秒就是1秒，调用show方法
+            })
+
+            var timerID = null;
+            var timerRunning = false;
+            function stopclock (){
+                if(timerRunning)
+                    clearTimeout(timerID);
+                timerRunning = false;}
+            function startclock () {
+                stopclock();
+                showtime();}
+
+            function showtime () {
+                var now = new Date();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds()
+                //var timeValue = "" +((hours >= 12) ? "下午 " : "上午 " )
+                //timeValue += ((hours >12) ? hours -12 :hours)
+                timeValue = hours;
+                timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+                timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
+                //                document.clock.thetime.value = timeValue;
+                $("#nowDate").html(timeValue);
+                timerID = setTimeout("showtime()",1000);
+                timerRunning = true;} 
+        </script>
+    </head>
+
+    <body>
+        <div id="header">
+            <div class="logo">
+                <a href="index.html">Nomura</a>
+            </div>
+            <div class="lang">
+                <ul>
+                    <!--<!--<li><a href="#">日本语</a></li>
+                    <li class="mid tapon"><a href="#">ENGLISH</a></li>--><!--<li><a href="#">日本语</a></li>
+                    <li class="mid tapon"><a href="#">ENGLISH</a></li>-->
+                    <!--<li><a href="#">简体中文</a></li>-->
+                    <li><a href="../index.html">中文</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="navigation">
+            <ul>
+                <li class=''><a href="company/summary.html">About Us</a>
+                    <ul>
+                        <li><a href="company/information.html">Introduction</a></li>
+                        <li><a href="company/visionvalues.html">Vision & Values</a></li>
+                        <li><a href="company/safe.html">Safety & Sustainable...</a></li>
+                        <li><a href="company/news.html">News & Info</a></li>
+                        <li><a href="company/contactus.html">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class=''><a href="area/area.html">Markets</a>
+                    <ul>
+                        <li><a href="area/exhibition.html">Museums & Exhibitions</a></li>
+                        <li><a href="area/exhibition1.html">Entertainment</a></li>
+                        <li><a href="area/exhibition2.html" >Hotels</a></li>
+                        <li><a href="area/exhibition3.html">Commercial Facilities</a></li>
+                        <li><a href="area/exhibition4.html">Office Environment</a></li>
+                        <li><a href="area/exhibition5.html">Residence</a></li>
+                    </ul>
+                </li>
+                <li class=''><a href="projects/projects.html">Projects</a>
+                    <ul>
+                        <li><a href="projects/important.html">Signature</a></li>
+                        <li><a href="projects/progress.html">Ongoing</a></li>
+                        <li><a href="projects/complete.html">Project Archive</a></li>
+                    </ul>
+                </li>
+                <li class=''><a href="service/service.html">Services</a></li>
+                <li class=''><a href="partners/partners.html">Partners</a>
+                    <ul>
+                        <li><a href="partners/our_partners.html">Our Service Consortium</a></li>
+                        <li><a href="partners/our_customers.html">Our Customers</a></li>
+                    </ul>
+                </li>
+                <!--<li class=''><a href="#">Contact us</a>
+                    <ul>
+                        <li><a href="#">公司具体位置</a></li>
+                    </ul>
+                </li>-->
+                <li class="li_end"><a href="joinus/joinus.html">Join Us</a>
+                    <ul>
+                        <li><a href="joinus/employment.html">Recruitment</a></li>
+                        <!--<!--<li><a href="#">Intern</a></li>-->
+                        <li><a href="joinus/whyus.html">Why Choose Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="f01bg"></div>
+        <div id="midwrapper">
+            <div id="slider" class="nivoSlider">
+                <a href="projects/imp17.html"><img src="img/nivoSlider/azone2.png" alt="" /></a>
+                <a href="projects/imp15.html"><img src="img/nivoSlider/azone_pacificocean.png" alt="太平洋联合馆" /></a>
+                <a href="projects/imp5.html"><img src="img/nivoSlider/azone2.jpg" alt="" /></a>
+                <a href="projects/imp10.html"><img src="img/nivoSlider/azone_peru.jpg" alt="" /></a>
+                <a href="projects/imp18.html"><img src="img/nivoSlider/azone1.jpg" alt="" /></a>
+                <a href="projects/imp16.html"><img src="img/nivoSlider/azone3.jpg" alt="" /></a>
+            </div>
+
+        </div>
+        <div id="content">
+            <div class="con">
+                <div class="content_l">
+                    <a href="company/safe.html"><h2>SAFETY FIRST</h2></a>
+                    <div class="left">
+                        <p>
+                            Safety is a value that is fundamental to our culture. Nomura Construction has earned an industry-leading record of achieving zero lost-time incidents on projects national wide. Year after year, our zero accidents philosophy helps put our safety performance right at the top of the industry. 
+                        </p>
+                        <h3>Our Goal: Zero Accidents </h3>
+                        <a href="company/safe.html"><img class="content_img" src="img/mid_left.jpg"></img></a>
+                        <p style="text-align: center;color: #1E7DBA;font-size: 18px; font-weight: bolder;font-family: '微软雅黑','宋体',Serif;  ">&nbsp;<span id="nowDay"></span>&nbsp;Days&nbsp;&nbsp;<span id="nowDate"></span></p><br/>
+                        <p>
+                            At Nomura Construction, we believe that every accident, and therefore every injury, is preventable, and we embed that philosophy into every Nomura project through a combination of technical field procedures and ongoing training programs. Every employee has stop-work authority—if it's not safe, don't do it. We also ask our subcontractors and partners to adopt our commitment to safety and health. The result is exceptional safety performance, even in hazardous work environments, severe weather, and remote locations. 
+                        </p>
+                        <br></br>
+                        <!--<a href="#"><img src="img/aboutus.jpg"></img></a>-->
+                    </div>
+                </div>
+                <div class="content_m">
+                    <a href="company/information.html"><h2>NOMURA CONSTRUCTION</h2></a>
+                    <div class="mid">
+                        <p>
+                            Nomura Construction is a world-class local construction services business operating across the construction lifecycle, with leading position in major markets in PR China.
+
+Over 15 years organic growth in China, focused on the private sector, Nomura Construction is becoming a rising star for the industry bring in cutting-edge concept designs, technologies and engineering to the China’s ever dynamic assets development markets. We provide the one-stop solutions to our clients / partners from Feasibility Study, Concept Development, Buildability Analysis, Scheme Design, Construction Design, Permitting, Construction and Assets Operation.  <br/><br/> 
+                        </p>
+                        <h3>Nomura Construction </h3>
+                        <!--<a href="company/content.html"><img class="content_img" src="img/company_sum.png" /></a>-->
+                        <video width="293" height="195" id="player2" poster="img/company_sum.png" type="video/mp4" src="video/naicun.mp4" controls preload="none">
+                            </video>
+                        <br/><p>
+                            Nomura Construction takes your business needs in the centre core of our approach; we value our contribution not only by success delivering your projects but enhance your business advantages in the markets. Our approach was enabled by our in-house bespoke advanced Programme / Project Management methodology, which tested and approved by our success to date in China. 
+                        </p>
+                        <br/>
+                        <!--<a href="#"><img src="img/seethemall.jpg" /></a>-->
+                    </div>
+                </div>
+                <div class="content_r">
+                    <a href="company/news.html"><h2>NEWS INFO</h2></a>
+                    <div class="rig">
+                    <marquee behavior=scroll direction=up scrollamount=2 onMouseOut="this.start()" onMouseOver="this.stop()" height="590px">
+     
+     <a href="company/news.html"><p class="rig_p_title"><strong>Newly-commenced Projects in 2013</strong></p></a>
+                        <p> 
+                      Decoration of First phase of Beigu Bay foreign-style house in Zhenjiang Municipality started in December 2012. 
+Decoration of No.590 Club in Yongjia Road, Shanghai Municipality started in March 12th ,2012.
+Exhibition design and decoration of 32 and 41 bid sections of Ma'anshan Science and Technology Museum started in February 18th ,2013.
+Wanke Feicui Villa 8# and 79# luxury decoration started.
+.
+                          </p> 
+                     <br />
+               <a href="company/news.html"><p class="rig_p_title"><strong>2013-2-18  Latest Design Projects：</strong></p></a>
+                        <p> 
+                            Shanghai HaitianJiangchang Modern Service Base design，with an area of 14500 square meters.<br />
+                            Shanghai Wanrong Automobile Industrial Creative Park concept design,  with an area of 30000 square meters.
+                        </p> 
+                     <br />
+            <a href="company/news.html"><p class="rig_p_title"><strong>2013-2-1</strong></p></a>
+                        <p> 
+                            The memorable 2012 had gone and the hopeful 2013 is now approaching. At this joyful moment, in order to express sincere thanks to all the staffs for their contribution and effort during last year, the company held its new year banquet in Shanghai Fudi Hotel. All the stuffs, customer representatives, subcontractor representatives, colleagues from subsidiaries and specially invited guests joined together in the joyful, happy and auspicious atmosphere to review the past and look into the bright future！<br />
+
+During the banquet, general manager Lu Jingyang summarized the achievement of the company in 2012 and explained the strategically planning in 2013. Stuffs of the company presented Xinjiang dancing, singings and operculum, and colleagues from subsidiaries performed the dancing of "Gangnang Style". All the participants also enjoyed the exciting lucky draw. The banquet ended in enthusiasm and happiness finally.<br />
+
+2013 is a new start point. Insisting the principle of people-orientation and ensuring quality and safety, Nomura Construction will keep on providing the best service to its customers！
+                   </p> 
+                     <br />
+               <a href="company/news.html"><p class="rig_p_title"><strong>2013-1-31</strong></p></a>
+                        <p> 
+                            Nomura Construction attaches great importance to quality, environment, occupational health and safety management. We’ve obtained the ISO9001:2008 quality management system certification, environmental management system certification and occupational health and safety management system certification. Nomura Construction has been named
+"2010-2011 year Shanghai ‘value the contracts, keep promise’ enterprise’’, the contract credit of 2010-2011 year was valued as AAA degree.
+                        </p> 
+                     <br />
+      <a href="company/news.html"><p class="rig_p_title"><strong>2012-12-19</strong></p></a>
+                        <p> 
+                            Beyond focusing on its own development, Nomura Construction also devotes itself to social events, actively participates in charity activities, supporting to the disaster areas and under developed regions many times.<br />
+
+Nomura positively performed its social responsibility and joined the activity of "The Favourite in the World" to pay close attention to the education of unattended children. In December 19, 2012, Nomura donated 80 thousand yuan to the branch of Shanghai Charity Foundation in Qingpu district.
+                   </p> 
+                     <br />
+                      <a href="company/news.html"><p class="rig_p_title"><strong>2012-6-15 Recent Well Completed and Accepted Projects</strong></p></a>
+                        <p> 
+1.Wanke Feicui Villa 75# and 77# luxury decoration project,  won the satisfaction of owners and acquired good social reputation.<br />
+2.Japanese Shimala City Store decoration project.<br />
+3.Pizza Marzano Restaurant in Grand Gateway decoration project.
+                    </p> 
+                     <br />
+                  <!--   <a href="company/news.html"><p class="rig_p_title"><strong>哈克桑餐饮内装修工程</strong></p></a>
+                        <p>
+                            我司与米其林星级餐厅HAKKASAN签署了内装合同
+                            Hakkasan-客家人
+                            曾经入榜世界前五十名餐厅，排名第19位，是世界排名最高的中餐厅
+                            2003年被米其林评为一颗星餐厅
+                            位于外滩18号5F
+                        </p>-->
+                        <br />
+                        <a href="company/news.html"><p class="rig_p_title"><strong>The No.3 Shop of AUTOBACS</strong></p></a>
+                        <p>
+                            The No.3 Shop of AUTOBACS is an extra-size Auto Accessory Shop, located ahead of the Jufeng Road stop of subway in Pudong, with an area of 2662 ㎡ in total, further design and construction of which are totally done by our company. The project was completed on Apr. 20, and the CEO of our company was invited to attend the opening ceremony on May 18, 2012. 
+                        </p>
+                        <br/>
+                        <!--<h2>BUSINESS REPORT</h2>-->
+                        <a href="company/news.html"><p class="rig_p_title"><strong>2012-4-13	The shimala Shop on 2nd floor of the Long Scene Boundary Plaza</strong></p></a>
+                        <p>
+                            The shimala Shop on 2nd floor of the Long Scene Boundary Plaza.
+                            The Shimengle Shop is a fashion shop selling trademark clothes, located at No.56, Lane 168, Daduhe Road, Putuo District, with an area of 1130 ㎡, already completed on Apr.13, 2012. 
+                        </p>
+                        <br />
+                        <a href="company/news.html"><p class="rig_p_title"><strong>2011-11-15 Shanghai Convention and Exhibition Forum 2011</strong></p></a>
+                        <p>
+                            Shanghai Convention and Exhibition Forum 2011 was held at Shanghai World Expo Exhibition Center. The forum focus on the theme of”Building Creative City, Promoting Innovation of Mice Industry”. The father of world’s creative industry Mr.John Howkins and the father of creativity of China Mr.Li wuwei were invited to present at the forum, and construct the vision for creativity and innovation in Convention and Exhibition together. Our general manager Mr.Lujingyang with his team were invited to attend the forum and related activities.  
+                        </p>
+                        </marquee>
+                        <br /><br /><br />
+                        
+                        <p style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subscribe to our news letters <a href="/en/mail/sendmail.html" target="_blank"><img style="float: right;height:35px; width:47px; margin:5px 0 5px 5px; padding-top:0px; margin-top:-10px;" src="img/mail.jpg" /></a>&nbsp;</p>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+                <!--<br/>
+                <div class="content_b">
+                    <img src="img/mail.jpg" />
+                    <p>&nbsp;Subscrib to our news letters info@nomura-sh.cn</p>
+                </div>-->
+            </div>
+        </div>
+        <div id="footer_index">
+            <div class="just_footer">
+
+                <div class="foot_img">
+                    <a target="_blank" href="http://e.weibo.com/u/3148748320?ref=http%3A%2F%2Fweibo.com%2F2410654832%2Fmyfollow%3Ft%3D1%26page%3D2" class="sina_img"></a>
+                    <a class="iaf_img"></a>
+                    <a class="qac_img"></a>
+                    <span class="iso">
+                        ISO 9001 &nbsp;
+                    </span>
+                    <span class="threea">
+                        AAA级企业认证
+                    </span>
+                </div>
+
+                <div class="foot_text">
+                    <span class="sp_comp">&nbsp;&nbsp;&nbsp;上海乃村装饰工艺有限公司网版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin-left:34px;">沪ICP备09050805号</span><br />&nbsp;&nbsp;&nbsp;Copyright NOMURA shanghai LTD., all right reserved &nbsp;&nbsp;</span>
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>

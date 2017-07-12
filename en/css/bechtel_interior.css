@@ -1,0 +1,70 @@
+/* 
+    Document   : bechtel_interior
+    Created on : 2013-3-6, 7:02:02
+    Author     : paino
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#subnav ul {
+    list-style-image:url(../img/gray_bullet.gif);
+    margin:0 5px 10px 30px;
+    padding:0;
+}
+
+#subnav ul a {
+    font-size:10px;
+    text-decoration:none;
+}
+
+#subnav a:hover {
+    color:#00A0E9;
+    text-decoration:underline;
+}
+
+#subnav ul ul {
+    list-style-type:none;
+    list-style-image:url(../img/blank_bullet.gif);
+    padding:0;
+    margin:5px 0;
+}
+
+#subnav .current a,#subnav .active a,#subnav .active .active a {
+    color:#00A0E9;
+}
+
+#subnav ul ul a,#subnav ul .active ul a {
+    text-decoration:none;
+    font-size:11px;
+    color:#666;
+}
+
+#subnav ul ul a:hover {
+    text-decoration:underline;
+}
+
+#subnav li {
+    border-bottom:1px solid #d7d8d8;
+    /*border-top:1px solid #fff;*/
+    padding:5px 5px 5px 0;
+}
+
+#subnav li:hover,#subnav li.over,#subnav .current {
+    list-style-image:url(../img/blue_bullet.png);
+}
+
+#subnav li li {
+    border-style:none;
+    padding:0;
+}
+
+#subnav li a {
+    font-size:12px;
+    text-transform:uppercase;
+    color:#666;
+}
+
+#subnav li li a {
+    text-transform:none;
+}
+

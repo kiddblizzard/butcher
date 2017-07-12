@@ -1,0 +1,10 @@
+menu:
+off:#f7f7f7
+on:#00a0e9
+news:
+bg:#6c6c6c(有图片遮盖)
+
+字体颜色：
+LOREM：#4d4d4d
+NEWS：#8a8a8a
+NEWS正文：#787878

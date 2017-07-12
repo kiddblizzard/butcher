@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>上海乃村装饰工艺有限公司 - 安全 & 可持续发展</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link type="text/css" rel="stylesheet" href="../css/header.css"/>
+        <link type="text/css" rel="stylesheet" href="../css/content.css"/>
+        <link type="text/css" rel="stylesheet" href="../css/footer.css"/>
+        <link type="text/css" rel="stylesheet" href="../css/nivoSlider/nivo-slider.css" />
+        <script type="text/javascript" src="../js/jquery.min.1.4.2.min.js"></script>
+        <script type="text/javascript" src="../js/nivoSlider/jquery.nivo.slider.pack.js"></script>
+        <script type="text/javascript" src="../js/main.js"></script>   
+        <script language="javascript">
+            $(document).ready(function(){
+
+                startclock();
+                var date = new Date(); //日期对象
+                var nowY = date.getFullYear(); //读英文就行了
+                var nowM = date.getMonth()+1; //取月的时候取的是当前月-1如果想取当前月+1就可以了
+                var nowD = date.getDate(); //读英文就行了
+
+                var day1 = (new Date).setFullYear(2000, 1, 1);
+                var day2 = (new Date).setFullYear(nowY, nowM, nowD);
+                var number_of_days = (day2 - day1) / 86400000;
+                $("#nowDay").html(number_of_days.toFixed(0)); //div的html是now这个字符串
+
+                
+                //var date = new Date(); //日期对象
+                //var now = "";
+                //now = date.getFullYear()+"年"; //读英文就行了
+                //now = now + (date.getMonth()+1)+"月"; //取月的时候取的是当前月-1如果想取当前月+1就可以了
+                //now = now + date.getDate()+"日";
+                //                now = now + date.getHours()+"时";
+                //                now = now + date.getMinutes()+"分";
+                //                now = now + date.getSeconds()+"秒";
+                //$("#nowDay").html(now); //div的html是now这个字符串
+                //                setTimeout("show()",1000); //设置过1000毫秒就是1秒，调用show方法
+            })
+
+            var timerID = null;
+            var timerRunning = false;
+            function stopclock (){
+                if(timerRunning)
+                    clearTimeout(timerID);
+                timerRunning = false;}
+            function startclock () {
+                stopclock();
+                showtime();}
+
+            function showtime () {
+                var now = new Date();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds()
+                //var timeValue = "" +((hours >= 12) ? "下午 " : "上午 " )
+                //timeValue += ((hours >12) ? hours -12 :hours)
+                timeValue = hours;
+                timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+                timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
+                //                document.clock.thetime.value = timeValue;
+                $("#nowDate").html(timeValue);
+                timerID = setTimeout("showtime()",1000);
+                timerRunning = true;} 
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="logo">
+                <a href="../index.html">Nomura</a>
+            </div>
+            <div class="lang">
+                <ul>
+                    <!--<li><a href="#">日本语</a></li>
+                    <li class="mid tapon"><a href="#">ENGLISH</a></li>-->
+                    <!--<li><a href="#">简体中文</a></li>-->
+                    <li><a href="../../index.html">中文</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="navigation">
+            <ul>
+                <li class='current'><a href="summary.html">About Us</a>
+                    <ul>
+                        <li><a href="information.html" title="Introduction">Introduction</a></li>
+                        <li><a href="visionvalues.html" title="Vision+values" >Vision & Values</a></li>
+                        <li><a href="safe.html" title="Safety Sustainable...">Safety & Sustainable...</a></li>
+                        <li><a href="news.html" title="News + info">News & Info</a></li>
+                        <li><a href="contactus.html" title="Contact us">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class=''><a href="../area/area.html">Markets</a>
+                    <ul>
+                        <li><a href="../area/exhibition.html">Museums & Exhibitions</a></li>
+                        <li><a href="../area/exhibition1.html">Entertainment</a></li>
+                        <li><a href="../area/exhibition2.html" >Hotels</a></li>
+                        <li><a href="../area/exhibition3.html">Commercial Facilities</a></li>
+                        <li><a href="../area/exhibition4.html">Office Environment</a></li>
+                        <li><a href="../area/exhibition5.html">Residential</a></li>
+                    </ul>
+                </li>
+                <li class=''><a href="../projects/projects.html">Projects</a>
+                    <ul>
+                        <li><a href="../projects/important.html">Signature</a></li>
+                        <li><a href="../projects/progress.html">Ongoing</a></li>
+                        <li><a href="../projects/complete.html">Project Archive</a></li>
+                    </ul>
+                </li>
+                <li class=''><a href="../service/service.html">Services</a></li>
+                <li class=''><a href="../partners/partners.html">Partners</a>
+                    <ul>
+                        <li><a href="../partners/our_partners.html">Our Service Consortium</a></li>
+                        <li><a href="../partners/our_customers.html">Our Customers</a></li>
+                    </ul>
+                </li>
+                <!--<li class=''><a href="#">Contact us</a>
+                    <ul>
+                        <li><a href="#">公司具体位置</a></li>
+                    </ul>
+                </li>-->
+                <li class="li_end"><a href="../joinus/joinus.html">Join Us</a>
+                    <ul>
+                        <li><a href="../joinus/employment.html">Recruitment</a></li>
+                        <!--<li><a href="#">Intern</a></li>-->
+                        <li><a href="../joinus/whyus.html">Why Choose Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="f01bg"></div>
+        <div id="midwrapper">
+            <div id="slider" class="nivoSlider">
+                <a href="../projects/imp17.html"><img src="../img/nivoSlider/azone2.png" alt="" /></a>
+                <a href="../projects/imp15.html"><img src="../img/nivoSlider/azone_pacificocean.png" alt="太平洋联合馆" /></a>
+                <a href="../projects/imp5.html"><img src="../img/nivoSlider/azone2.jpg" alt="" /></a>
+                <a href="../projects/imp10.html"><img src="../img/nivoSlider/azone_peru.jpg" alt="" /></a>
+                <a href="../projects/imp18.html"><img src="../img/nivoSlider/azone1.jpg" alt="" /></a>
+                <a href="../projects/imp16.html"><img src="../img/nivoSlider/azone3.jpg" alt="" /></a>
+            </div>
+
+        </div>
+        <div id="content">
+            <div class="con">
+                <div id="page">
+                    <div id='subnav'>
+                        <ul>
+                            <li><a href="information.html" title="Introduction" >Introduction</a></li>
+                            <li><a href="visionvalues.html" title="Vision & values" >Vision & Values</a></li>
+                            <li class="active current"><a href="safe.html" title="Safety & Sustainable development" >Safety & Sustainable development</a></li>
+                            <li><a href="news.html" title="News & info">News & Info</a></li>
+                            <li><a href="contactus.html" title="Contact us">Contact Us</a></li>
+                        </ul>
+                    </div>                    
+                    <div id='page_content'>
+
+                        <div id='bread'>
+                            <span class="B_crumbBox"><span class="B_firstCrumb"><a class="B_homeCrumb" href="../index.html" title="Home">Home</a></span> &raquo; <a class="B_crumb" href="summary.html" title="About US">About US</a> &raquo; <span class="B_lastCrumb"><span class="B_currentCrumb">Safety Sustainable development</span></span></span>
+                        </div>
+                        <div id='title'>
+                            <h1>OUR GOAL: ZERO ACCIDENTS</h1>
+                        </div>
+                        <div id='summary'>
+
+                        </div>
+                        <div id='document_content'>
+                            <div id='sidebar' style='width:290px'>
+                                <div class='large_callout'><h2>Our safety construction &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;has continued for </h2>
+                                    <h1 style="text-align: center;"><a href="#"></a></h1>
+                                    <p><a href="#"><span id="nowDiv" style="color: #1E7DBA;font-size: 24px; font-weight: bolder;"></span></a></p>
+                                    <p style="text-align: center;color: #1E7DBA;font-size: 18px; font-weight: bolder;font-family: '微软雅黑','宋体',Serif;"><span id="nowDay"> </span>&nbsp;Days</p>
+                                    <p style="text-align: center;color: #1E7DBA;font-size: 18px; font-weight: bolder;font-family: '微软雅黑','宋体',Serif;"><span id="nowDate"></span></p>
+                                </div>
+                            </div>
+                            <ul id="project_list">
+                                <li>           
+                                    <p><strong>Safety First</strong></p>
+                                    <p> Safety is a value that is fundamental to our culture. Nomura Construction has earned an industry-leading record of achieving zero lost-time incidents on projects national wide. Year after year, our zero accidents philosophy helps put our safety performance right at the top of the industry. </p>
+                                    <p>At Nomura Construction, we believe that every accident, and therefore every injury, is preventable, and we embed that philosophy into every Nomura project through a combination of technical field procedures and ongoing training programs. Every employee has stop-work authority—if it's not safe, don't do it. We also ask our subcontractors and partners to adopt our commitment to safety and health. The result is exceptional safety performance, even in hazardous work environments, severe weather, and remote locations.</p>
+                                    <p>Our dedication to safety helps keep workers safe, and it also pays off for our customers. Their operating costs go down and productivity goes up because less time is lost to accidents. And our people go home to their families safely at the end of each day. </p>
+                                    <br/>
+                                    <p><strong>Sustainability</strong></p>
+                                    <p>Nomura Constructions’ commitment to sustainability means supporting our customers in meeting government, community, and financing requirements for sustainability. </p>
+                                    <p>Our sustainability group focuses on the following services: </p>
+                                    <p>•	Addressing standards for public consultation and disclosure; working with indigenous peoples; and hiring and work place practices. </p>
+                                    <p>•	Designing programs that deliver training and skills that enable workers to meet project needs. </p>
+                                    <p>•	Designing programs that help local suppliers and contractors qualify for involvement in our project and future opportunities. </p>
+                                    <p>•	Integrating "green," functional, and community design concepts into design and construction. </p>
+                                    <p>•	Engaging local communities in partnerships that represent both project and public interests. </p><br/>
+                                    <p><strong>Commitment To The Environment </strong></p>
+                                    <p>Nomura is committed to environmental excellence to all our projects. From groundbreaking projects, to activities in local communities, Nomura and its employees are taking action to protect the environment at all levels.</p><br/>
+                                    <p><strong>Company Initiatives</strong></p>
+                                    <p>Efforts are underway at all Nomura office to create an environmentally friendly workplace.</p>
+                                    <p>Initiatives include: </p>                                    
+                                    <p>•	Recycling programs at all major office, and projects </p>
+                                    <p>•	Smart light technology to reduce energy waste </p>
+                                    <p>•	Education about simple steps employees can take to reduce their personal carbon footprint</p>
+                                </li>
+
+                            </ul>
+                            <p><a href='#top'><img style='margin-bottom:0;' src='../img/red_bullet_up.gif' /> Top </a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div>
+                <br/><br/>
+                <span class="sp_comp">Copyright NOMURA shanghai LTD., 2008-2013 all right reserved &nbsp;&nbsp;&nbsp;上海乃村装饰工艺有限公司网版权所有 </span>
+                <!--  <span class="p_create">
+                    Create By xxxxxxxxxxxxxxxxxxxxxxxx
+                </span>
+                <br/>
+                <span class="sp_reg">@2010 Real Estate Company........</span>-->
+
+            </div>
+        </div>
+    </body>
+</html>

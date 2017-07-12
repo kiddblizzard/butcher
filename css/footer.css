@@ -1,0 +1,93 @@
+/* CSS Document */
+#footer{
+    margin-top: 20px;
+    background: url("../img/foot_bg.jpg") repeat-x scroll 0 0 white;
+    height: 85px;
+    float: left;
+    width: 100%;
+}
+#footer div{
+    width: 952px;
+    margin: 0 auto;
+}
+#footer span {
+    color: #fff;
+}
+#footer .sp_comp{
+    /*font-size: 14px;*/
+	font-size: 12px;
+    /*font-weight: bolder;*/
+}
+#footer .sp_reg {
+    font-size: 12px;
+}
+#footer .p_create{
+    float: right;
+    margin-right: 10px;
+}
+#footer_index {
+	margin-top: 20px;
+    background: url("../img/foot_bg.jpg") repeat-x scroll 0 0 white;
+    height: 95px;
+    width: 100%;
+	color:#fff;
+	font-size:12px;
+	/*font-weight:700;*/
+	clear:both;
+	margin:0 auto;
+}
+.just_footer {
+	width:1010px;
+	height:95px;
+	margin:0 auto;
+
+}
+.foot_text {
+	width:460px;
+	margin-top:30px;
+	float:right;
+}
+.foot_img {
+	width:520px;
+	margin-top:30px;
+	line-height:50px;
+	float:right;
+}
+.sina_img {
+	width:100px;
+	height:50px;
+	display:inline-block;
+	float:left;
+	margin-right:10px;
+    /*margin-top: 12px;*/
+	background:url(../img/sina.png) no-repeat; 
+}
+.iaf_img {
+	width:83px;
+    width: 100px;
+	height:45px;
+	display:inline-block;
+	float:left;
+	margin-right:-10px;
+	margin-top:10px;
+	margin-left:55px;
+    /*margin-left:150px;*/
+	background:url(../img/iaf.png) top center no-repeat; 
+    
+    line-height: 80px;
+    color: #fff;
+    font-size: 12px;
+}
+.qac_img {
+	width:81px;
+	height:45px;
+	display:inline-block;
+	float:left;
+	margin-right:-7px;
+	margin-top:10px;
+	background:url(../img/qac.png) no-repeat; 
+    
+    line-height: 80px;
+    color: #fff;
+    font-size: 12px;
+}
