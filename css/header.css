@@ -1,6 +1,6 @@
 /* CSS Document */
 *{ margin: 0px; padding: 0px; }*
-body { 
+body {
     background:#fafafa center top;
     /*color: #e9e9e9;*/
     color: #787878;
@@ -11,7 +11,7 @@ a{
     color: #787878;
 }
 body, a, p{
-    font:14px "微软雅黑",Georgia,Serif;  
+    font:14px "微软雅黑",Georgia,Serif;
 }
 
 #header{
@@ -36,14 +36,14 @@ body, a, p{
     /*display: block;*/
     float: left;
     width: 214px;
-    height: 68px;
+    height: 88px;
     padding: 0!important;
-	margin-top:-14px;
+	  margin-top:-25px;
     background: url('../img/logo1.png') 0 0 no-repeat;
     text-indent: -30000px;
 }
 .lang{
-    position: relative;    
+    position: relative;
     bottom:50px;
     /*left:500px;*/
     right: 0;
@@ -64,7 +64,7 @@ body, a, p{
     float: right;
     border-left: 1px solid #959595;
     border-right: 1px solid #959595;
-    /*background: url('../img/lan_solid.png') right no-repeat;*/ 
+    /*background: url('../img/lan_solid.png') right no-repeat;*/
 }
 .lang li a{
     float: left;
@@ -72,7 +72,7 @@ body, a, p{
     text-shadow: 0 0 1px #959595;
     padding: 0 45px;
     padding-top: 10px;
-    font:12px "微软雅黑",Georgia,Serif;  
+    font:12px "微软雅黑",Georgia,Serif;
 }
 .lang li.mid{
     border: 0;
@@ -235,7 +235,7 @@ a.nivo-prevNav {left:15px;}
     background: url("../img/content_bg.png") repeat-x scroll center top #fff;
     width: 100%;
     float: left;
-    font-family: "微软雅黑",Georgia,Serif;  
+    font-family: "微软雅黑",Georgia,Serif;
 }
 
 #content .con{
